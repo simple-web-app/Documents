@@ -17,7 +17,7 @@ API：
 
 API文档：
 
-- [点击这里](./index.html)
+- [点击这里](https://simple-web-app.github.io/)
 
 ### :zap:Quick Start
 
