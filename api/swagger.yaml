@@ -45,7 +45,7 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/response_404"
-  /user/articles:
+  /articles:
     get:
       tags:
       - "article"
@@ -70,7 +70,7 @@ paths:
           description: "Not found"
           schema:
             $ref: "#/definitions/response_404"
-  /user/article/{id}:
+  /article/{id}:
     get:
       tags:
       - "article"
@@ -99,29 +99,52 @@ paths:
           description: "Not Found"
           schema:
             $ref: "#/definitions/response_404"
-  /user/deleteArticle/{id}:
-    get:
+    delete:
       tags:
-      - "article"
+        - "article"
       summary: "Delete article by id"
       description: "Delete an article"
       operationId: "DeleteArticleById"
       produces:
-      - "application/json"
+        - "application/json"
       parameters:
-      - name: "id"
-        in: "path"
-        description: "The ID of the article"
-        required: true
-        type: "integer"
-        x-exportParaName: "Id"
-        x-exportParamName: "Id"
+        - name: "id"
+          in: "path"
+          description: "The ID of the article"
+          required: true
+          type: "integer"
+          x-exportParaName: "Id"
+          x-exportParamName: "Id"
       responses:
         "200":
           description: "Success"
         "404":
           description: "Not Found"
-  /user/article/{id}/comments:
+  /article:
+    post:
+      tags:
+        - "article"
+      summary: "Add a article at last"
+      description: "Add a article"
+      operationId: "AddArticle"
+      parameters:
+        - in: "body"
+          name: "Article"
+          required: true
+          schema:
+            $ref: "#/definitions/Article"
+          x-exportParaName: "Article"
+          x-exportParamName: "Article"
+      responses:
+        "200":
+          description: "Successful"
+          schema:
+            $ref: "#/definitions/Article"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/response_400"
+  /article/{id}/comments:
     get:
       tags:
       - "comment"
@@ -181,6 +204,90 @@ paths:
           description: "Bad Request"
           schema:
             $ref: "#/definitions/response_400"
+
+  /tag/{id}:
+    get:
+      tags:
+        - "tag"
+      summary: "The tag"
+      description: "Get tag"
+      operationId: "GetTagById"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "id"
+          in: "path"
+          description: "The ID of the tag"
+          required: true
+          type: "integer"
+          x-exportParamName: "Id"
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Tag"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/response_400"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/response_404"
+
+  /tag:
+    get:
+      tags:
+        - "tag"
+      summary: "The tag"
+      description: "Get tags"
+      operationId: "GetTags"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "Tag"
+          required: true
+          schema:
+            $ref: "#/definitions/Tag"
+          x-exportParaName: "Tag"
+          x-exportParamName: "Tag"
+      responses:
+        "200":
+          description: "Success"
+          schema:
+            $ref: "#/definitions/Tag"
+        "400":
+          description: "Bad Request"
+          schema:
+            $ref: "#/definitions/response_400"
+        "404":
+          description: "Not Found"
+          schema:
+            $ref: "#/definitions/response_404"
+    post:
+      tags:
+        - "tag"
+      summary: "Add a tag at last"
+      description: "Add a tag"
+      operationId: "AddTag"
+      parameters:
+        - in: "body"
+          name: "Tag"
+          required: true
+          schema:
+            $ref: "#/definitions/Tag"
+          x-exportParaName: "Tag"
+          x-exportParamName: "Tag"
+      responses:
+        "200":
+           description: "Successful"
+           schema:
+             $ref: "#/definitions/Tag"
+        "400":
+           description: "Bad Request"
+           schema:
+             $ref: "#/definitions/response_400"
 definitions:
   User:
     type: "object"
@@ -197,6 +304,8 @@ definitions:
       username: "username"
   Tag:
     type: "object"
+    required:
+      - "name"
     properties:
       name:
         type: "string"
