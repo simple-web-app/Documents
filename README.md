@@ -1,9 +1,9 @@
-# Blog
+# A Simple Web Blog
 本次的简单 web 服务与客户端开发实战，我们小组选择进行一个简单博客的制作。
 
 ## 项目简介
 
-项目名称：A simple web app
+项目名称：A simple web blog
 
 项目目标：
 
@@ -72,7 +72,7 @@
 
 - [点击这里](https://simple-web-app.github.io/)
 
-### :zap:Quick Start
+## :zap:Quick Start
 
 #### 前端部分
 
@@ -139,3 +139,14 @@ import(
 cahn233.cn:3333/api/
 ```
 
+## 前端设计
+
+**文章列表：**
+
+![](./pic/web-articles.png)
+
+点击其中的一个文章标题可以进入文章具体内容
+
+**文章内容：**
+
+![](./pic/web-article-content.png)
