@@ -21,10 +21,12 @@ API文档：
 
 ### :zap:Quick Start
 
+#### 后端部分Choose1
+
 对于后端部分，使用以下命令进行安装
 
 ```
-go get https://github.com/simple-web-app/Server/tree/main/go
+go get -u https://github.com/simple-web-app/Server/tree/main/go
 ```
 
 然后在相应文件中进行import
@@ -35,7 +37,7 @@ import(
 )
 ```
 
-在main.go的main函数中添加以下代码即可运行
+在main.go的main函数中添加以下代码即可运行，即可在localhost:8080端口接收到我们API的相关信息
 
 ```
 	sw.CreateUser()
@@ -45,3 +47,12 @@ import(
 
 	log.Fatal(http.ListenAndServe(":8080", router))
 ```
+
+#### 后段部分Choose2
+
+你也可以选择我们提供服务的在线API
+
+```
+cahn233.cn:3333/api/
+```
+

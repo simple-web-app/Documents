@@ -854,6 +854,7 @@ margin-bottom: 20px;
 };
         defs["Tag"] = {
   "type" : "object",
+  "required" : [ "name" ],
   "properties" : {
     "name" : {
       "type" : "string"
@@ -896,6 +897,9 @@ margin-bottom: 20px;
             <li class="nav-fixed nav-header active" data-group="_"><a href="#api-_">API Summary</a></li>
 
                   <li class="nav-header" data-group="Article"><a href="#api-Article">API Methods - Article</a></li>
+                    <li data-group="Article" data-name="addArticle" class="">
+                      <a href="#api-Article-addArticle">addArticle</a>
+                    </li>
                     <li data-group="Article" data-name="deleteArticleById" class="">
                       <a href="#api-Article-deleteArticleById">deleteArticleById</a>
                     </li>
@@ -912,6 +916,16 @@ margin-bottom: 20px;
                   <li class="nav-header" data-group="Comments"><a href="#api-Comments">API Methods - Comments</a></li>
                     <li data-group="Comments" data-name="createComment" class="">
                       <a href="#api-Comments-createComment">createComment</a>
+                    </li>
+                  <li class="nav-header" data-group="Tag"><a href="#api-Tag">API Methods - Tag</a></li>
+                    <li data-group="Tag" data-name="addTag" class="">
+                      <a href="#api-Tag-addTag">addTag</a>
+                    </li>
+                    <li data-group="Tag" data-name="getTagById" class="">
+                      <a href="#api-Tag-getTagById">getTagById</a>
+                    </li>
+                    <li data-group="Tag" data-name="getTags" class="">
+                      <a href="#api-Tag-getTags">getTags</a>
                     </li>
                   <li class="nav-header" data-group="User"><a href="#api-User">API Methods - User</a></li>
                     <li data-group="User" data-name="signIn" class="">
@@ -938,6 +952,354 @@ margin-bottom: 20px;
         <div id="sections">
                 <section id="api-Article">
                   <h1>Article</h1>
+                    <div id="api-Article-addArticle">
+                      <article id="api-Article-addArticle-0" data-group="User" data-name="addArticle" data-version="0">
+                        <div class="pull-left">
+                          <h1>addArticle</h1>
+                          <p>Add a article at last</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">Add a article</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/article</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Article-addArticle-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Article-addArticle-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Article-addArticle-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Article-addArticle-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Article-addArticle-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Article-addArticle-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Article-addArticle-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Article-addArticle-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Article-addArticle-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Article-addArticle-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Article-addArticle-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Article-addArticle-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://virtserver.swaggerhub.com/serviece/Test/1.0.0/article"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Article-addArticle-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.ArticleApi;
+
+import java.io.File;
+import java.util.*;
+
+public class ArticleApiExample {
+
+    public static void main(String[] args) {
+        
+        ArticleApi apiInstance = new ArticleApi();
+        Article article = ; // Article | 
+        try {
+            Article result = apiInstance.addArticle(article);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ArticleApi#addArticle");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Article-addArticle-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.ArticleApi;
+
+public class ArticleApiExample {
+
+    public static void main(String[] args) {
+        ArticleApi apiInstance = new ArticleApi();
+        Article article = ; // Article | 
+        try {
+            Article result = apiInstance.addArticle(article);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling ArticleApi#addArticle");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Article-addArticle-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Article-addArticle-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Article *article = ; // 
+
+ArticleApi *apiInstance = [[ArticleApi alloc] init];
+
+// Add a article at last
+[apiInstance addArticleWith:article
+              completionHandler: ^(Article output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Article-addArticle-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var SimpleWebBlog = require('simple_web_blog');
+
+var api = new SimpleWebBlog.ArticleApi()
+
+var article = ; // {Article} 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.addArticle(article, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Article-addArticle-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Article-addArticle-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class addArticleExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new ArticleApi();
+            var article = new Article(); // Article | 
+
+            try
+            {
+                // Add a article at last
+                Article result = apiInstance.addArticle(article);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling ArticleApi.addArticle: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Article-addArticle-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\ArticleApi();
+$article = ; // Article | 
+
+try {
+    $result = $api_instance->addArticle($article);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling ArticleApi->addArticle: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Article-addArticle-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::ArticleApi;
+
+my $api_instance = WWW::SwaggerClient::ArticleApi->new();
+my $article = WWW::SwaggerClient::Object::Article->new(); # Article | 
+
+eval { 
+    my $result = $api_instance->addArticle(article => $article);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling ArticleApi->addArticle: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Article-addArticle-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.ArticleApi()
+article =  # Article | 
+
+try: 
+    # Add a article at last
+    api_response = api_instance.add_article(article)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling ArticleApi->addArticle: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+                            <div class="methodsubtabletitle">Body parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">article <span style="color:red;">*</span></td>
+<td>
+
+
+<script>
+$(document).ready(function() {
+  var schemaWrapper = {
+  "in" : "body",
+  "name" : "Article",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Article"
+  },
+  "x-exportParaName" : "Article",
+  "x-exportParamName" : "Article"
+};
+  var schema = schemaWrapper.schema;
+  if (schema.$ref != null) {
+    schema = defsParser.$refs.get(schema.$ref);
+  } else {
+    schemaWrapper.definitions = Object.assign({}, defs);
+    $RefParser.dereference(schemaWrapper).catch(function(err) {
+      console.log(err);
+    });
+  }
+
+  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
+  var result = $('#d2e199_addArticle_article');
+  result.empty();
+  result.append(view.render());
+});
+</script>
+<div id="d2e199_addArticle_article"></div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - Successful </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-addArticle-200-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-addArticle-200-schema">
+                                  <div id='responses-addArticle-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Successful",
+  "schema" : {
+    "$ref" : "#/definitions/Article"
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-addArticle-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-addArticle-200-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-addArticle-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                            <h3> Status: 400 - Bad Request </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-addArticle-400-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-addArticle-400-schema">
+                                  <div id='responses-addArticle-400-schema-400' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Bad Request",
+  "schema" : {
+    "$ref" : "#/definitions/response_400"
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-addArticle-400-schema-data').val(stringify(schema));
+                                        var result = $('#responses-addArticle-400-schema-400');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-addArticle-400-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
                     <div id="api-Article-deleteArticleById">
                       <article id="api-Article-deleteArticleById-0" data-group="User" data-name="deleteArticleById" data-version="0">
                         <div class="pull-left">
@@ -950,7 +1312,7 @@ margin-bottom: 20px;
                         <p class="marked">Delete an article</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/user/deleteArticle/{id}</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="delete"><code><span class="pln">/article/{id}</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -970,7 +1332,7 @@ margin-bottom: 20px;
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Article-deleteArticleById-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://virtserver.swaggerhub.com/serviece/Test/1.0.0/user/deleteArticle/{id}"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X DELETE "https://virtserver.swaggerhub.com/serviece/Test/1.0.0/article/{id}"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Article-deleteArticleById-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -1206,7 +1568,7 @@ except ApiException as e:
                         <p class="marked">Get Aritles&#39; details</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/user/article/{id}</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/article/{id}</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -1226,7 +1588,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Article-getArticleById-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://virtserver.swaggerhub.com/serviece/Test/1.0.0/user/article/{id}"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://virtserver.swaggerhub.com/serviece/Test/1.0.0/article/{id}"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Article-getArticleById-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -1584,7 +1946,7 @@ except ApiException as e:
                         <p class="marked">Get the articles&#39; titles</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/user/articles</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/articles</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -1604,7 +1966,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Article-getArticles-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://virtserver.swaggerhub.com/serviece/Test/1.0.0/user/articles?page="</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://virtserver.swaggerhub.com/serviece/Test/1.0.0/articles?page="</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Article-getArticles-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -1922,7 +2284,7 @@ except ApiException as e:
                         <p class="marked">Get the comments of the article</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/user/article/{id}/comments</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/article/{id}/comments</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -1942,7 +2304,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Comment-getCommentsOfArticle-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://virtserver.swaggerhub.com/serviece/Test/1.0.0/user/article/{id}/comments"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://virtserver.swaggerhub.com/serviece/Test/1.0.0/article/{id}/comments"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Comment-getCommentsOfArticle-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -2303,7 +2665,7 @@ except ApiException as e:
                         <p class="marked">Create a new comment</p>
                         <p></p>
                         <br />
-                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/user/article/{id}/comments</span></code></pre>
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/article/{id}/comments</span></code></pre>
                         <p>
                           <h3>Usage and SDK Samples</h3>
                         </p>
@@ -2323,7 +2685,7 @@ except ApiException as e:
 
                         <div class="tab-content">
                           <div class="tab-pane active" id="examples-Comments-createComment-0-curl">
-                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://virtserver.swaggerhub.com/serviece/Test/1.0.0/user/article/{id}/comments"</code></pre>
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://virtserver.swaggerhub.com/serviece/Test/1.0.0/article/{id}/comments"</code></pre>
                           </div>
                           <div class="tab-pane" id="examples-Comments-createComment-0-java">
                             <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
@@ -2562,7 +2924,8 @@ $(document).ready(function() {
   "schema" : {
     "$ref" : "#/definitions/body"
   },
-  "x-exportParaName" : "Body"
+  "x-exportParaName" : "Body",
+  "x-exportParamName" : "Body"
 };
   var schema = schemaWrapper.schema;
   if (schema.$ref != null) {
@@ -2672,6 +3035,1126 @@ $(document).ready(function() {
                                     </script>
                                   </div>
                                   <input id='responses-createComment-400-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                  </section>
+                <section id="api-Tag">
+                  <h1>Tag</h1>
+                    <div id="api-Tag-addTag">
+                      <article id="api-Tag-addTag-0" data-group="User" data-name="addTag" data-version="0">
+                        <div class="pull-left">
+                          <h1>addTag</h1>
+                          <p>Add a tag at last</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">Add a tag</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="post"><code><span class="pln">/tag</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Tag-addTag-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Tag-addTag-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Tag-addTag-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Tag-addTag-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Tag-addTag-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Tag-addTag-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Tag-addTag-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Tag-addTag-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Tag-addTag-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Tag-addTag-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Tag-addTag-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Tag-addTag-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X POST "https://virtserver.swaggerhub.com/serviece/Test/1.0.0/tag"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Tag-addTag-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.TagApi;
+
+import java.io.File;
+import java.util.*;
+
+public class TagApiExample {
+
+    public static void main(String[] args) {
+        
+        TagApi apiInstance = new TagApi();
+        Tag tag = ; // Tag | 
+        try {
+            Tag result = apiInstance.addTag(tag);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TagApi#addTag");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Tag-addTag-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.TagApi;
+
+public class TagApiExample {
+
+    public static void main(String[] args) {
+        TagApi apiInstance = new TagApi();
+        Tag tag = ; // Tag | 
+        try {
+            Tag result = apiInstance.addTag(tag);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TagApi#addTag");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Tag-addTag-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Tag-addTag-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Tag *tag = ; // 
+
+TagApi *apiInstance = [[TagApi alloc] init];
+
+// Add a tag at last
+[apiInstance addTagWith:tag
+              completionHandler: ^(Tag output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Tag-addTag-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var SimpleWebBlog = require('simple_web_blog');
+
+var api = new SimpleWebBlog.TagApi()
+
+var tag = ; // {Tag} 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.addTag(tag, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Tag-addTag-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Tag-addTag-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class addTagExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new TagApi();
+            var tag = new Tag(); // Tag | 
+
+            try
+            {
+                // Add a tag at last
+                Tag result = apiInstance.addTag(tag);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TagApi.addTag: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Tag-addTag-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\TagApi();
+$tag = ; // Tag | 
+
+try {
+    $result = $api_instance->addTag($tag);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TagApi->addTag: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Tag-addTag-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::TagApi;
+
+my $api_instance = WWW::SwaggerClient::TagApi->new();
+my $tag = WWW::SwaggerClient::Object::Tag->new(); # Tag | 
+
+eval { 
+    my $result = $api_instance->addTag(tag => $tag);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling TagApi->addTag: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Tag-addTag-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.TagApi()
+tag =  # Tag | 
+
+try: 
+    # Add a tag at last
+    api_response = api_instance.add_tag(tag)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TagApi->addTag: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+                            <div class="methodsubtabletitle">Body parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">tag <span style="color:red;">*</span></td>
+<td>
+
+
+<script>
+$(document).ready(function() {
+  var schemaWrapper = {
+  "in" : "body",
+  "name" : "Tag",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Tag"
+  },
+  "x-exportParaName" : "Tag",
+  "x-exportParamName" : "Tag"
+};
+  var schema = schemaWrapper.schema;
+  if (schema.$ref != null) {
+    schema = defsParser.$refs.get(schema.$ref);
+  } else {
+    schemaWrapper.definitions = Object.assign({}, defs);
+    $RefParser.dereference(schemaWrapper).catch(function(err) {
+      console.log(err);
+    });
+  }
+
+  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
+  var result = $('#d2e199_addTag_tag');
+  result.empty();
+  result.append(view.render());
+});
+</script>
+<div id="d2e199_addTag_tag"></div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - Successful </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-addTag-200-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-addTag-200-schema">
+                                  <div id='responses-addTag-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Successful",
+  "schema" : {
+    "$ref" : "#/definitions/Tag"
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-addTag-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-addTag-200-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-addTag-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                            <h3> Status: 400 - Bad Request </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-addTag-400-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-addTag-400-schema">
+                                  <div id='responses-addTag-400-schema-400' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Bad Request",
+  "schema" : {
+    "$ref" : "#/definitions/response_400"
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-addTag-400-schema-data').val(stringify(schema));
+                                        var result = $('#responses-addTag-400-schema-400');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-addTag-400-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Tag-getTagById">
+                      <article id="api-Tag-getTagById-0" data-group="User" data-name="getTagById" data-version="0">
+                        <div class="pull-left">
+                          <h1>getTagById</h1>
+                          <p>The tag</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">Get tag</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/tag/{id}</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Tag-getTagById-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Tag-getTagById-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Tag-getTagById-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Tag-getTagById-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Tag-getTagById-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Tag-getTagById-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Tag-getTagById-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Tag-getTagById-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Tag-getTagById-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Tag-getTagById-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Tag-getTagById-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Tag-getTagById-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://virtserver.swaggerhub.com/serviece/Test/1.0.0/tag/{id}"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Tag-getTagById-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.TagApi;
+
+import java.io.File;
+import java.util.*;
+
+public class TagApiExample {
+
+    public static void main(String[] args) {
+        
+        TagApi apiInstance = new TagApi();
+        Integer id = 56; // Integer | The ID of the tag
+        try {
+            Tag result = apiInstance.getTagById(id);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TagApi#getTagById");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Tag-getTagById-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.TagApi;
+
+public class TagApiExample {
+
+    public static void main(String[] args) {
+        TagApi apiInstance = new TagApi();
+        Integer id = 56; // Integer | The ID of the tag
+        try {
+            Tag result = apiInstance.getTagById(id);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TagApi#getTagById");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Tag-getTagById-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Tag-getTagById-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Integer *id = 56; // The ID of the tag
+
+TagApi *apiInstance = [[TagApi alloc] init];
+
+// The tag
+[apiInstance getTagByIdWith:id
+              completionHandler: ^(Tag output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Tag-getTagById-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var SimpleWebBlog = require('simple_web_blog');
+
+var api = new SimpleWebBlog.TagApi()
+
+var id = 56; // {Integer} The ID of the tag
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getTagById(id, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Tag-getTagById-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Tag-getTagById-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class getTagByIdExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new TagApi();
+            var id = 56;  // Integer | The ID of the tag
+
+            try
+            {
+                // The tag
+                Tag result = apiInstance.getTagById(id);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TagApi.getTagById: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Tag-getTagById-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\TagApi();
+$id = 56; // Integer | The ID of the tag
+
+try {
+    $result = $api_instance->getTagById($id);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TagApi->getTagById: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Tag-getTagById-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::TagApi;
+
+my $api_instance = WWW::SwaggerClient::TagApi->new();
+my $id = 56; # Integer | The ID of the tag
+
+eval { 
+    my $result = $api_instance->getTagById(id => $id);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling TagApi->getTagById: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Tag-getTagById-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.TagApi()
+id = 56 # Integer | The ID of the tag
+
+try: 
+    # The tag
+    api_response = api_instance.get_tag_by_id(id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TagApi->getTagById: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+                            <div class="methodsubtabletitle">Path parameters</div>
+                            <table id="methodsubtable">
+                                <tr>
+                                  <th width="150px">Name</th>
+                                  <th>Description</th>
+                                </tr>
+                                  <tr><td style="width:150px;">id*</td>
+<td>
+
+
+    <div id="d2e199_getTagById_id">
+        <div class="json-schema-view">
+            <div class="primitive">
+                <span class="type">
+                    Integer
+                </span>
+
+                    <div class="inner description">
+                        The ID of the tag
+                    </div>
+            </div>
+                <div class="inner required">
+                    Required
+                </div>
+        </div>
+    </div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - Success </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getTagById-200-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getTagById-200-schema">
+                                  <div id='responses-getTagById-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Success",
+  "schema" : {
+    "$ref" : "#/definitions/Tag"
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getTagById-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getTagById-200-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getTagById-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                            <h3> Status: 400 - Bad Request </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getTagById-400-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getTagById-400-schema">
+                                  <div id='responses-getTagById-400-schema-400' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Bad Request",
+  "schema" : {
+    "$ref" : "#/definitions/response_400"
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getTagById-400-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getTagById-400-schema-400');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getTagById-400-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                            <h3> Status: 404 - Not Found </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getTagById-404-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getTagById-404-schema">
+                                  <div id='responses-getTagById-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Not Found",
+  "schema" : {
+    "$ref" : "#/definitions/response_404"
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getTagById-404-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getTagById-404-schema-404');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getTagById-404-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                        </article>
+                      </div>
+                      <hr>
+                    <div id="api-Tag-getTags">
+                      <article id="api-Tag-getTags-0" data-group="User" data-name="getTags" data-version="0">
+                        <div class="pull-left">
+                          <h1>getTags</h1>
+                          <p>The tag</p>
+                        </div>
+                        <div class="pull-right"></div>
+                        <div class="clearfix"></div>
+                        <p></p>
+                        <p class="marked">Get tags</p>
+                        <p></p>
+                        <br />
+                        <pre class="prettyprint language-html prettyprinted" data-type="get"><code><span class="pln">/tag</span></code></pre>
+                        <p>
+                          <h3>Usage and SDK Samples</h3>
+                        </p>
+                        <ul class="nav nav-tabs nav-tabs-examples">
+                          <li class="active"><a href="#examples-Tag-getTags-0-curl">Curl</a></li>
+                          <li class=""><a href="#examples-Tag-getTags-0-java">Java</a></li>
+                          <li class=""><a href="#examples-Tag-getTags-0-android">Android</a></li>
+                          <!--<li class=""><a href="#examples-Tag-getTags-0-groovy">Groovy</a></li>-->
+                          <li class=""><a href="#examples-Tag-getTags-0-objc">Obj-C</a></li>
+                          <li class=""><a href="#examples-Tag-getTags-0-javascript">JavaScript</a></li>
+                          <!--<li class=""><a href="#examples-Tag-getTags-0-angular">Angular</a></li>-->
+                          <li class=""><a href="#examples-Tag-getTags-0-csharp">C#</a></li>
+                          <li class=""><a href="#examples-Tag-getTags-0-php">PHP</a></li>
+                          <li class=""><a href="#examples-Tag-getTags-0-perl">Perl</a></li>
+                          <li class=""><a href="#examples-Tag-getTags-0-python">Python</a></li>
+                        </ul>
+
+                        <div class="tab-content">
+                          <div class="tab-pane active" id="examples-Tag-getTags-0-curl">
+                            <pre class="prettyprint"><code class="language-bsh">curl -X GET "https://virtserver.swaggerhub.com/serviece/Test/1.0.0/tag"</code></pre>
+                          </div>
+                          <div class="tab-pane" id="examples-Tag-getTags-0-java">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.*;
+import io.swagger.client.auth.*;
+import io.swagger.client.model.*;
+import io.swagger.client.api.TagApi;
+
+import java.io.File;
+import java.util.*;
+
+public class TagApiExample {
+
+    public static void main(String[] args) {
+        
+        TagApi apiInstance = new TagApi();
+        Tag tag = ; // Tag | 
+        try {
+            Tag result = apiInstance.getTags(tag);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TagApi#getTags");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+
+                          <div class="tab-pane" id="examples-Tag-getTags-0-android">
+                            <pre class="prettyprint"><code class="language-java">import io.swagger.client.api.TagApi;
+
+public class TagApiExample {
+
+    public static void main(String[] args) {
+        TagApi apiInstance = new TagApi();
+        Tag tag = ; // Tag | 
+        try {
+            Tag result = apiInstance.getTags(tag);
+            System.out.println(result);
+        } catch (ApiException e) {
+            System.err.println("Exception when calling TagApi#getTags");
+            e.printStackTrace();
+        }
+    }
+}</code></pre>
+                          </div>
+  <!--
+  <div class="tab-pane" id="examples-Tag-getTags-0-groovy">
+  <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+  </div> -->
+                            <div class="tab-pane" id="examples-Tag-getTags-0-objc">
+                              <pre class="prettyprint"><code class="language-cpp">Tag *tag = ; // 
+
+TagApi *apiInstance = [[TagApi alloc] init];
+
+// The tag
+[apiInstance getTagsWith:tag
+              completionHandler: ^(Tag output, NSError* error) {
+                            if (output) {
+                                NSLog(@"%@", output);
+                            }
+                            if (error) {
+                                NSLog(@"Error: %@", error);
+                            }
+                        }];
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Tag-getTags-0-javascript">
+                              <pre class="prettyprint"><code class="language-js">var SimpleWebBlog = require('simple_web_blog');
+
+var api = new SimpleWebBlog.TagApi()
+
+var tag = ; // {Tag} 
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+api.getTags(tag, callback);
+</code></pre>
+                            </div>
+
+                            <!--<div class="tab-pane" id="examples-Tag-getTags-0-angular">
+              <pre class="prettyprint language-json prettyprinted" data-type="json"><code>Coming Soon!</code></pre>
+            </div>-->
+                            <div class="tab-pane" id="examples-Tag-getTags-0-csharp">
+                              <pre class="prettyprint"><code class="language-cs">using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class getTagsExample
+    {
+        public void main()
+        {
+            
+            var apiInstance = new TagApi();
+            var tag = new Tag(); // Tag | 
+
+            try
+            {
+                // The tag
+                Tag result = apiInstance.getTags(tag);
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling TagApi.getTags: " + e.Message );
+            }
+        }
+    }
+}
+</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Tag-getTags-0-php">
+                              <pre class="prettyprint"><code class="language-php"><&#63;php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$api_instance = new Swagger\Client\Api\TagApi();
+$tag = ; // Tag | 
+
+try {
+    $result = $api_instance->getTags($tag);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling TagApi->getTags: ', $e->getMessage(), PHP_EOL;
+}
+?></code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Tag-getTags-0-perl">
+                              <pre class="prettyprint"><code class="language-perl">use Data::Dumper;
+use WWW::SwaggerClient::Configuration;
+use WWW::SwaggerClient::TagApi;
+
+my $api_instance = WWW::SwaggerClient::TagApi->new();
+my $tag = WWW::SwaggerClient::Object::Tag->new(); # Tag | 
+
+eval { 
+    my $result = $api_instance->getTags(tag => $tag);
+    print Dumper($result);
+};
+if ($@) {
+    warn "Exception when calling TagApi->getTags: $@\n";
+}</code></pre>
+                            </div>
+
+                            <div class="tab-pane" id="examples-Tag-getTags-0-python">
+                              <pre class="prettyprint"><code class="language-python">from __future__ import print_statement
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.TagApi()
+tag =  # Tag | 
+
+try: 
+    # The tag
+    api_response = api_instance.get_tags(tag)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling TagApi->getTags: %s\n" % e)</code></pre>
+                            </div>
+                          </div>
+
+                          <h2>Parameters</h2>
+
+
+
+                            <div class="methodsubtabletitle">Body parameters</div>
+                            <table id="methodsubtable">
+                              <tr>
+                                <th width="150px">Name</th>
+                                <th>Description</th>
+                              </tr>
+                                <tr><td style="width:150px;">tag <span style="color:red;">*</span></td>
+<td>
+
+
+<script>
+$(document).ready(function() {
+  var schemaWrapper = {
+  "in" : "body",
+  "name" : "Tag",
+  "required" : true,
+  "schema" : {
+    "$ref" : "#/definitions/Tag"
+  },
+  "x-exportParaName" : "Tag",
+  "x-exportParamName" : "Tag"
+};
+  var schema = schemaWrapper.schema;
+  if (schema.$ref != null) {
+    schema = defsParser.$refs.get(schema.$ref);
+  } else {
+    schemaWrapper.definitions = Object.assign({}, defs);
+    $RefParser.dereference(schemaWrapper).catch(function(err) {
+      console.log(err);
+    });
+  }
+
+  var view = new JSONSchemaView(schema,2,{isBodyParam: true});
+  var result = $('#d2e199_getTags_tag');
+  result.empty();
+  result.append(view.render());
+});
+</script>
+<div id="d2e199_getTags_tag"></div>
+</td>
+</tr>
+
+                            </table>
+
+
+
+                          <h2>Responses</h2>
+                            <h3> Status: 200 - Success </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getTags-200-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getTags-200-schema">
+                                  <div id='responses-getTags-200-schema-200' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Success",
+  "schema" : {
+    "$ref" : "#/definitions/Tag"
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getTags-200-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getTags-200-schema-200');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getTags-200-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                            <h3> Status: 400 - Bad Request </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getTags-400-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getTags-400-schema">
+                                  <div id='responses-getTags-400-schema-400' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Bad Request",
+  "schema" : {
+    "$ref" : "#/definitions/response_400"
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getTags-400-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getTags-400-schema-400');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getTags-400-schema-data' type='hidden' value=''></input>
+                                </div>
+                            </div>
+
+                            <h3> Status: 404 - Not Found </h3>
+
+                            <ul class="nav nav-tabs nav-tabs-examples" >
+                                <li class="active">
+                                  <a data-toggle="tab" href="#responses-getTags-404-schema">Schema</a>
+                                </li>
+
+                            </ul>
+
+                            <div class="tab-content" style='margin-bottom: 10px;'>
+                                <div class="tab-pane active" id="responses-getTags-404-schema">
+                                  <div id='responses-getTags-404-schema-404' style="padding: 30px; border-left: 1px solid #eee; border-right: 1px solid #eee; border-bottom: 1px solid #eee;">
+                                    <script>
+                                      $(document).ready(function() {
+                                        var schemaWrapper = {
+  "description" : "Not Found",
+  "schema" : {
+    "$ref" : "#/definitions/response_404"
+  }
+};
+                                        var schema = schemaWrapper.schema;
+                                        if (schema.$ref != null) {
+                                          schema = defsParser.$refs.get(schema.$ref);
+                                        } else {
+                                          schemaWrapper.definitions = defs;
+                                          $RefParser.dereference(schemaWrapper).catch(function(err) {
+                                            console.log(err);
+                                          });
+                                        }
+
+                                        //console.log(JSON.stringify(schema));
+                                        var view = new JSONSchemaView(schema, 3);
+                                        $('#responses-getTags-404-schema-data').val(stringify(schema));
+                                        var result = $('#responses-getTags-404-schema-404');
+                                        result.empty();
+                                        result.append(view.render());
+                                      });
+                                    </script>
+                                  </div>
+                                  <input id='responses-getTags-404-schema-data' type='hidden' value=''></input>
                                 </div>
                             </div>
 
@@ -2911,7 +4394,8 @@ $(document).ready(function() {
   "required" : true,
   "schema" : {
     "$ref" : "#/definitions/User"
-  }
+  },
+  "x-exportParamName" : "Body"
 };
   var schema = schemaWrapper.schema;
   if (schema.$ref != null) {
